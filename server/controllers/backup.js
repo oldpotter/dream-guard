@@ -7,22 +7,33 @@ const transporter = nodemailer.createTransport({
 	}
 });
 
-module.exports = (ctx, next) => {
-	var options = {
+module.exports = async (ctx, next) => {
+	const { diary } = ctx.request.body
+	const options = {
 		from: '1472623890@qq.com',
 		to: '67538417@qq.com',
 		subject: '一封来自Node Mailer的邮件',
-		text: '一封来自Node Mailer的邮件',
-		html: '<h1>你好，这是一封来自NodeMailer的邮件！</h1><p><img src="cid:00000001"/></p>',
+		text: diary,
 	};
-	transporter.sendMail(options, function (err, info) {
-		if (err) {
-			console.log(err);
-			ctx.state.code = 4444
-			return;
-		}
-		ctx.state.code = 1985
-		console.log('发送成功');
-	});
+	// await transporter.sendMail(options, function (err, info) {
+	// 	if (err) {
+	// 		console.log(err);
+	// 		ctx.state.code = 4444
+	// 		return;
+	// 	}
+	// 	ctx.state.code = 1985
+	// 	console.log('发送成功');
+	// });
+	await transporter.sendMail(options)
+		.then((err, info) => {
+			if (err) {
+				console.log(err);
+				ctx.state.code = 4444
+				ctx.state.data = err
+				return
+			}
+			ctx.state.code = 1985
+			console.log('发送成功');
+		})
 
 }

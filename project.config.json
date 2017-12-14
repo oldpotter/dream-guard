@@ -13,5 +13,24 @@
 	"appid": "wx37c195cd3224b69d",
 	"projectname": "dream-guard",
 	"libVersion": "1.6.0",
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/setting/setting"
+				}
+			]
+		}
+	}
 }

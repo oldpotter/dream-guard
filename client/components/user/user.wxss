@@ -1,0 +1,5 @@
+/* components/user.wxss */
+.avatar{
+	width: 300rpx;
+	height: 300rpx;
+}

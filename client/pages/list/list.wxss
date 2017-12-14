@@ -1,1 +1,5 @@
 /* pages/list/list.wxss */
+
+.diary-item {
+  border-bottom: 1rpx solid lightgray;
+}

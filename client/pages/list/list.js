@@ -1,15 +1,25 @@
 const config = require('../../config.js')
+const app = getApp()
 Page({
+
+	data: {
+		list: undefined
+	},
+
+	onShow() {
+		this.setData({
+			list: app.list
+		})
+	},
+
+	onReady() {
+		wx.navigateTo({
+			url: '../data-entry/data-entry',
+		})
+	},
+
 	onClickAddBtn() {
 		console.log(`url:${config.service.backupUrl}`)
-		wx.request({
-			url: config.service.backupUrl,
-			success: function(res) {
-				console.log(res)
-			},
-			fail: function(res) {},
-			complete: function(res) {},
-		})
 		wx.navigateTo({
 			url: '../data-entry/data-entry',
 		})

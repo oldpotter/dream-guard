@@ -1,0 +1,6 @@
+/* pages/data-entry/data-entry.wxss */
+.textarea{
+	height: 500rpx;
+	width: 100%;
+	background: lightblue;
+}

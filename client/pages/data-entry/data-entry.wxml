@@ -1,0 +1,6 @@
+<!--pages/data-entry/data-entry.wxml-->
+<view class='page'>
+  <view class='page__bd page__bd_spacing'>
+    <textarea class='textarea' placeholder='输入一幕经历...' auto-focus='true' maxlength='-1' bindblur='onBlur'></textarea>
+  </view>
+</view>

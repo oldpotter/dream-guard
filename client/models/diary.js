@@ -1,0 +1,5 @@
+class Diary {
+	constructor(title){
+
+	}
+}

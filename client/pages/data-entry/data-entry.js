@@ -13,6 +13,9 @@ Page({
 			return
 		}
 		let diary = new Diary(this.data.content)
+		if(app.DEBUG){
+			console.log('diary:',diary)
+		}
 		app.list.push(diary)
 		wx.setStorageSync('list', app.list)
 	},

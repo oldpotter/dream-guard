@@ -12,20 +12,18 @@ module.exports = async (ctx, next) => {
 	const options = {
 		from: '1472623890@qq.com',
 		to: data.email,
-		subject: `【梦境守护者】${data.diary.date}`,
+		subject: `【梦境守护者】${data.diary.id}`,
 		text: data.diary.content,
 	};
-	
+
 	await transporter.sendMail(options)
-		.then((err, info) => {
-			if (err) {
-				console.log(err);
-				ctx.state.code = 4444
-				ctx.state.data = err
-				return
-			}
-			ctx.state.code = 1985
-			console.log('发送成功');
+		.then(info => {
+			ctx.state.data = data.diary.id
+			ctx.state.code = 1000
+		})
+		.catch(err=>{
+			ctx.state.code = -1
+			ctx.state.data = data.diary.id
 		})
 
 }

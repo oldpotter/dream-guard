@@ -19,7 +19,6 @@ Page(Object.assign({}, Zan.TopTips, {
 			autoBackup:this.data.autoBackup,
 			email:this.data.email
 		}
-		console.log('app.backup:',app.backup)
 		wx.setStorageSync('backup', app.backup)
 	},
 

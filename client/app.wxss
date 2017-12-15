@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import "./vendor/weui-wxss/dist/app.wxss";
+@import '/vendor/zanui-weapp/dist/index.wxss';
 .container {
   display: flex;
   flex-direction: column;

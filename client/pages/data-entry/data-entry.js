@@ -14,6 +14,7 @@ Page({
 		}
 		let diary = new Diary(this.data.content)
 		app.list.push(diary)
+		wx.setStorageSync('list', app.list)
 	},
 
 	onInput(event) {

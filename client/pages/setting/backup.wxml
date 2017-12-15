@@ -1,0 +1,32 @@
+<!--pages/setting/backup.wxml-->
+<import src="../../vendor/zanui-weapp/dist/toptips/index.wxml" />
+<template is='zan-toptips' data='{{zanTopTips}}' />
+<view class='page'>
+  <view class='page__bd'>
+    <view class='weui-cells'>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">备份到邮箱</view>
+        <view class="weui-cell__ft">
+          <switch checked='{{autoBackup}}' bindchange='onSwitchChange' />
+        </view>
+      </view>
+    </view>
+    <block wx:if='{{autoBackup}}'>
+      <view class="weui-cells">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label {{isEmailValid?'':'weui-cell_warn'}}">邮箱</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入备份邮箱" value='{{email}}' bindblur='onBlur' />
+          </view>
+
+          <view wx:if='{{!isEmailValid}}' class="weui-cell__ft">
+            <icon type="warn" size="23" color="#E64340"></icon>
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</view>

@@ -18,4 +18,10 @@ Page({
 			complete: function (res) { },
 		})
 	},
+
+	onClickBackupCell(){
+		wx.navigateTo({
+			url: './backup',
+		})
+	}
 })

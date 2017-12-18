@@ -7,6 +7,10 @@ App({
 		qcloud.setLoginUrl(config.service.loginUrl)
 		this.list = wx.getStorageSync('list') || []
 		this.backup = wx.getStorageSync('backup') || {}
+		setInterval(() => this.doBackup(), 30000)
+	},
+
+	doBackup() {
 		//backup
 		if (this.backup.autoBackup && this.backup.email) {
 			this.list
@@ -31,7 +35,6 @@ App({
 					})
 				})
 		}
-
 	},
 
 	onHide() {

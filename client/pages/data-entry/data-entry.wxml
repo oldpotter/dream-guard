@@ -1,7 +1,12 @@
 <!--pages/data-entry/data-entry.wxml-->
-<view class='page'>
-  <view class='page__bd page__bd_spacing'>
+<view class='page {{night?"night":""}} back'>
+  <view class='box'>
     <textarea class='textarea' placeholder='输入一幕经历...' auto-focus='true' maxlength='-1' bindinput='onInput'></textarea>
-		<button type='primary' bindtap='onTapBtn' style='margin-top:20rpx'>保存</button>
+    <checkbox-group bindchange="onChange">
+      <label>
+        <checkbox value="{{isLucid}}" checked="{{isLucid}}" />清明梦
+      </label>
+    </checkbox-group>
+    <button type='primary' bindtap='onTapBtn' style='margin-top:20rpx'>保存</button>
   </view>
 </view>

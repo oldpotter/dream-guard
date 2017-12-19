@@ -1,13 +1,29 @@
 //app.js
 var qcloud = require('./vendor/wafer2-client-sdk/index')
 var config = require('./config')
-
+const moment = require('./vendor/moment.min.js')
 App({
 	onLaunch: function () {
 		qcloud.setLoginUrl(config.service.loginUrl)
 		this.list = wx.getStorageSync('list') || []
 		this.backup = wx.getStorageSync('backup') || {}
+		this.quick = wx.getStorageSync('quick')
 		setInterval(() => this.doBackup(), 30000)
+		this.checkNight()
+		setInterval(() => this.checkNight(), 60000)
+	},
+
+
+	onHide() {
+		wx.setStorageSync('list', this.list)
+		wx.setStorageSync('backup', this.backup)
+		wx.setStorageSync('quick', this.quick)
+	},
+
+	checkNight() {
+		const now = moment()
+		this.night = now.hour() > 22 || now.hour() < 7
+		// this.night = true
 	},
 
 	doBackup() {
@@ -37,13 +53,9 @@ App({
 		}
 	},
 
-	onHide() {
-		wx.setStorageSync('list', this.list)
-		wx.setStorageSync('backup', this.backup)
-	},
-
 	DEBUG: true,
 	list: undefined,
 	backup: undefined,//自动备份
-
+	quick: undefined,//快速模式
+	night: undefined,
 })

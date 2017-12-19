@@ -1,8 +1,9 @@
 const moment = require('../vendor/moment.min.js')
+//备份状态
 const BACKUP_STATE = {
-	FAIL: -1,
-	SUCCESS: 1,
-	NEW: 0
+	FAIL: -1,//备份失败
+	SUCCESS: 1,//备份成功
+	NEW: 0//从未备份
 }
 class Diary {
 	constructor(content) {
@@ -10,6 +11,7 @@ class Diary {
 		this.content = content
 		this.date = moment()
 		this.state = 0
+		this.isLucid = false
 	}
 }
 

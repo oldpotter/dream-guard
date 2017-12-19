@@ -4,20 +4,35 @@ const app = getApp()
 Page({
 
 	data: {
-		content: undefined
+		content: undefined,
+		night: undefined,
+		isLucid: false
 	},
 
+	onLoad() {
+		this.setData({
+			night: app.night
+		})
+	},
 
 	onUnload() {
 		if (!this.data.content) {
 			return
 		}
 		let diary = new Diary(this.data.content)
-		if(app.DEBUG){
-			console.log('diary:',diary)
+		diary.isLucid = this.data.isLucid
+		if (app.DEBUG) {
+			console.log('diary:', diary)
 		}
 		app.list.push(diary)
 		wx.setStorageSync('list', app.list)
+	},
+
+	onChange(event) {
+		this.setData({
+			isLucid: event.detail.value.length > 0 ? true : false
+		})
+		// console.log(this.data.isLucid)
 	},
 
 	onInput(event) {

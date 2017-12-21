@@ -10,6 +10,7 @@ class Diary {
 		this.id = moment().format('x')
 		this.content = content
 		this.date = moment()
+		this.displayDate = undefined
 		this.state = 0
 		this.isLucid = false
 	}

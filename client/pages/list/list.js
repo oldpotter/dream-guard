@@ -12,7 +12,7 @@ Page({
 			list: app.list
 		})
 		this.data.list.reverse().forEach(diary=>{
-			diary.date = moment(diary.date).format('YYYY年MM月DD日')
+			diary.displayDate = moment(diary.date).format('YYYY年MM月DD日')
 		})
 		this.setData({
 			list: this.data.list

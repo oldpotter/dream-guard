@@ -2,7 +2,6 @@ const config = require('../../config.js')
 const Diary = require('../../models/diary.js')
 const app = getApp()
 Page({
-
 	data: {
 		content: undefined,
 		night: undefined,

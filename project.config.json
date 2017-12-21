@@ -36,6 +36,12 @@
 					"name": "备份",
 					"pathName": "pages/setting/backup",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "s",
+					"pathName": "pages/s/s",
+					"query": ""
 				}
 			]
 		}

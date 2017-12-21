@@ -1,5 +1,5 @@
 <!--pages/data-entry/data-entry.wxml-->
-<view class='page {{night?"night":""}} back'>
+<view class='page back {{night?"night":""}}'>
   <view class='box'>
     <textarea class='textarea' placeholder='输入一幕经历...' auto-focus='true' maxlength='-1' bindinput='onInput'></textarea>
     <checkbox-group bindchange="onChange">

@@ -3,7 +3,7 @@
   <view class='page__bd page__bd_spacing'>
     <view wx:for='{{list}}'>
       <view class='diary-item'>
-				<view class='diary-item-info'>{{item.date}}{{item.isLucid?" | 清明梦":""}}</view>
+				<view class='diary-item-info'>{{item.displayDate}}{{item.isLucid?" | 清明梦":""}}</view>
 				<view class='diary-item-content'>{{item.content}}</view>        
       </view>
     </view>

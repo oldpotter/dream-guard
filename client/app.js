@@ -23,7 +23,7 @@ App({
 	checkNight() {
 		const now = moment()
 		this.night = now.hour() > 22 || now.hour() < 7
-		// this.night = true
+		console.log(this.night)
 	},
 
 	doBackup() {

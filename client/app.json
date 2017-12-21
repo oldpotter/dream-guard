@@ -2,13 +2,14 @@
   "pages": [
     "pages/list/list",
     "pages/data-entry/data-entry",
-    "pages/setting/setting",
-    "pages/setting/backup"
+    "pages/me/me",
+    "pages/me/setting",
+    "pages/me/tags"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#2F4F4F",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#2F4F4F",
     "navigationBarTitleText": "梦境守护者",
     "navigationBarTextStyle": "black"
   },
@@ -19,8 +20,8 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/setting/setting",
-        "text": "设置"
+        "pagePath": "pages/me/me",
+        "text": "我"
       }
     ]
   }
